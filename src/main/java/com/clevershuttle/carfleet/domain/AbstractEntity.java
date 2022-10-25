@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
+import java.time.ZonedDateTime;
 
 @MappedSuperclass
 @Data
@@ -28,11 +29,9 @@ public class AbstractEntity  implements Serializable {
   @Version
   @Column(name = "version")
   int version = 0;
-  @CreatedDate
-  @Column(name ="created-at",columnDefinition = "TIMESTAMP")
+  @Column(name ="createdat",columnDefinition = "TIMESTAMP")
   Instant createdAt;
-  @LastModifiedDate
-  @Column(name ="last-updated-at",columnDefinition = "TIMESTAMP")
+  @Column(name ="lastupdatedat",columnDefinition = "TIMESTAMP")
   Instant lastUpdatedAt;
   @Column(name ="active")
   boolean active= true;

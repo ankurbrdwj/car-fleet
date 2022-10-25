@@ -23,6 +23,7 @@ public class CarService {
 
   public List<CarResponse> getAll() {
     return repository.findAll().stream()
+      .filter(e->e.isActive())
       .map(CarResponse::of)
       .collect(Collectors.toList());
   }
@@ -36,7 +37,7 @@ public class CarService {
   }
 
   public CarResponse getOne(Long id) {
-    Car car = repository.findById(id)
+    Car car = repository.findByIdAndActiveTrue(id)
       .orElseThrow(() -> new ElementNotFoundException("Car with Id :" + id + " not found"));
     return CarResponse.of(car);
   }

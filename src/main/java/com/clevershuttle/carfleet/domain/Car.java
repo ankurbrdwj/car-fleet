@@ -17,13 +17,13 @@ public class Car extends AbstractEntity implements Serializable {
   @Column(name ="brand")
   private String brand;
 
-  @Column(name ="license-plate")
+  @Column(name ="licenseplate")
   private String licensePlate;
 
   @Column(name ="manufacturer")
   private String manufacturer;
 
-  @Column(name ="operations-city")
+  @Column(name ="operationscity")
   private String operationsCity;
 
   @Column(name ="status")

@@ -28,6 +28,7 @@ public class CarResponse {
       .operationsCity(car.getOperationsCity())
       .createdAt(car.getCreatedAt().toString())
       .lastUpdatedAt(car.getLastUpdatedAt().toString())
+      .status(car.getStatus().toString())
       .build();
   }
 }
