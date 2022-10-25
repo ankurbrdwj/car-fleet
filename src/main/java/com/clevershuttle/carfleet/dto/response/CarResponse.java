@@ -4,6 +4,7 @@ import com.clevershuttle.carfleet.domain.Car;
 import com.clevershuttle.carfleet.dto.request.CarRequest;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -11,7 +12,6 @@ import javax.persistence.Column;
 @Getter
 @Setter
 public class CarResponse {
-  private Long id ;
   private String brand;
   private String licensePlate;
   private String manufacturer;
@@ -22,7 +22,6 @@ public class CarResponse {
 
   public static CarResponse of(Car car){
     return CarResponse.builder()
-      .id(car.getId())
       .brand(car.getBrand())
       .licensePlate(car.getLicensePlate())
       .manufacturer(car.getManufacturer())
