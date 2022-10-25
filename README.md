@@ -1,10 +1,15 @@
 Car fleet project # clevershuttle
 
 Build and run this project use:
+
+
   gradle bootRun
 
-You can curl or import collection in postman
+You can curl or import collection in postman :
+
+
 POST
+
 curl --location --request POST 'localhost:8080/cars' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -14,6 +19,7 @@ curl --location --request POST 'localhost:8080/cars' \
 "operationsCity": "Berlin",
 "status": "available"
 }'
+
 
 curl --location --request POST 'localhost:8080/cars' \
 --header 'Content-Type: application/json' \
@@ -26,10 +32,17 @@ curl --location --request POST 'localhost:8080/cars' \
 }'
 
 GETALL
+
 curl --location --request GET 'localhost:8080/cars'
+
+
 GET ONE
+
 curl --location --request GET 'localhost:8080/cars/1'
+
+
 PUT
+
 curl --location --request PUT 'localhost:8080/cars/1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -40,6 +53,8 @@ curl --location --request PUT 'localhost:8080/cars/1' \
 "status": "available"
 }'
 
+
 DEL
+
 curl --location --request DELETE 'localhost:8080/cars/1'
 
