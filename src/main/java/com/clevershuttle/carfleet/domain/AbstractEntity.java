@@ -1,11 +1,16 @@
 package com.clevershuttle.carfleet.domain;
 
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @MappedSuperclass
+@Data
 public class AbstractEntity  implements Serializable {
   protected static final int DEFAULT_SCALE = 2;
   @Serial
@@ -23,9 +28,12 @@ public class AbstractEntity  implements Serializable {
   @Version
   @Column(name = "version")
   int version = 0;
-
-  @Column(columnDefinition = "TIMESTAMP")
-  LocalDateTime createdAt;
-  @Column(columnDefinition = "TIMESTAMP")
-  LocalDateTime lastUpdatedAt;
+  @CreatedDate
+  @Column(name ="created-at",columnDefinition = "TIMESTAMP")
+  Instant createdAt;
+  @LastModifiedDate
+  @Column(name ="last-updated-at",columnDefinition = "TIMESTAMP")
+  Instant lastUpdatedAt;
+  @Column(name ="active")
+  boolean active= true;
 }
